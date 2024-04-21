@@ -1,5 +1,5 @@
 # generador-de-pdfs
-Generador de pdfs a partir de un json con preguntas, examenes con hasta 10 preguntas randomizadas
+Generador de pdfs a partir de un json con preguntas, examenes con hasta 10 preguntas randomizadas. La ventaja de esta solucion es no tener que hostearlo en ningun lado ya que es un solo archivo html que se puede correr en cualquier navegador. Es rapido de usar y de generar los archivos y permite editar el titulo y el subtitulo. El codigo es javascript en html asi que con ganas y un poquito de conocimiento se podria editar para cambiar tamaños de fuentes, disposiciones, etcetera.
 
 # Uso
 
@@ -21,4 +21,5 @@ El archivo generado se ve asi con una pagina por examen:
 
 
 ### Consideraciones
+Si es muy imposible trabajar editando un json se puede expandir la solucion para generar el json automaticamente o aceptar un csv que se pueda generar desde excel pero esta opcion me parecio lo suficientemente simple.
 No funciona muy bien con preguntas o respuestas que ocupen mas de un renglon, pegarle una revisada a todos los examenes en caso de utilizarlo para asegurarse que no se sobreponen los textos.
