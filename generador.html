@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de examenes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <style>
+        /* Set the page size and margins */
+        @page {
+            size: A4 landscape;
+            margin: 10mm;
+        }
+    </style>
+</head>
+<body>
+    Preguntas de examen: <input type="file" id="jsonInput" accept=".json">
+    <br>
+    Titulo: <input type="text" id="titleInput">
+    <br>
+    Subtitulo: <input type="text" id="subtitleInput">
+    <br>
+    Preguntas por examen (max 10): <input type="number" id="numQuestionsInput" min="1" max="10" value="10">
+    <br>
+    Cantidad de examenes a generar: <input type="number" id="numExamsInput" min="1" value="470">
+    <br>
+    <button onclick="generateExams()">Generar examenes</button>
+    <script>
+        function generateExams() {
+            const jsonFile = document.getElementById('jsonInput').files[0];
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                const questions = JSON.parse(reader.result);
+                const numExams = parseInt(document.getElementById('numExamsInput').value);
+                const subtitleInput = document.getElementById('subtitleInput').value;
+                const titleInput = document.getElementById('titleInput').value;
+                const questionsPerExam = parseInt(document.getElementById('numQuestionsInput').value);
+                const pdf = new jsPDF('l', 'mm', 'a4'); // Landscape orientation, millimeters, A4 size
+
+                for (let examIndex = 0; examIndex < numExams; examIndex++) {
+                    const examQuestions = getRandomQuestions(questions, questionsPerExam);
+
+                    // Add a new page for each exam
+                    if (examIndex > 0) {
+                        pdf.addPage();
+                    }
+
+                    // Add exam header
+                    pdf.setFontSize(14);
+                    pdf.text(`${titleInput} ${examIndex + 1}:`, 10, 10);
+                    if(subtitleInput.length > 0){
+                        pdf.setFontSize(12);
+                        pdf.setFont(undefined, 'bold');
+                        pdf.text(subtitleInput, 10, 15);
+                    }
+                    pdf.setFont(undefined, 'normal');
+                    // Set up column positions
+                    const columnX = [15, 125]; // X-coordinates for the two columns
+                    const columnWidth = 90; // Maximum width for each column
+                    let y = 25; // Start position for questions
+
+                    for (let i = 0; i < examQuestions.length; i++) {
+                        const columnIndex = i % 2; // Alternate between columns
+                        const question = examQuestions[i];
+
+                        // Add question text with line breaks
+                        pdf.setFontSize(8);
+                        pdf.setFont(undefined, 'bold');
+                        const questionLines = pdf.splitTextToSize(question.text, columnWidth);
+                        pdf.text(questionLines, columnX[columnIndex], y);
+                        y += (questionLines.length * 5) + 1; // Add spacing based on the number of lines
+                        pdf.setFont(undefined, 'normal');
+                        // Add answer choices
+                        const choices = shuffleArray(question.choices);
+                        for (let j = 0; j < choices.length; j++) {
+                            const choiceLines = pdf.splitTextToSize(choices[j], columnWidth - 10);
+                            pdf.text(String.fromCharCode(65 + j) + ') ' + choiceLines, columnX[columnIndex] + 5, y);
+                            y += (choiceLines.length * 4) + 3; // Add spacing based on the number of lines
+                        }
+
+                        // Move to the next column if necessary
+                        if ((i + 1) % 5 === 0) {
+                            y = 25; // Reset y-coordinate for the new column
+                        } else {
+                            y += 5; // Add spacing between questions in the same column
+                        }
+                    }
+                }
+
+                // Save the PDF file
+                pdf.save('exams.pdf');
+            };
+
+            reader.readAsText(jsonFile);
+        }
+
+        function getRandomQuestions(questions, numQuestions) {
+            const shuffledQuestions = shuffleArray(questions);
+            return shuffledQuestions.slice(0, numQuestions);
+        }
+
+        function shuffleArray(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+    </script>
+</body>
+</html>
