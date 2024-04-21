@@ -1,0 +1,137 @@
+[
+  {
+    "text": "¿Cuál es la capital de España?",
+    "choices": [
+      "Madrid",
+      "Barcelona",
+      "Sevilla",
+      "Valencia"
+    ]
+  },
+  {
+    "text": "¿Cuál es el río más largo de América del Sur?",
+    "choices": [
+      "Río Amazonas",
+      "Río Paraná",
+      "Río Orinoco",
+      "Río Magdalena"
+    ]
+  },
+  {
+    "text": "¿Quién pintó la famosa obra 'La Gioconda'?",
+    "choices": [
+      "Leonardo da Vinci",
+      "Miguel Ángel",
+      "Rafael",
+      "Rembrandt"
+    ]
+  },
+  {
+    "text": "¿Cuál es el país más grande de América del Sur?",
+    "choices": [
+      "Brasil",
+      "Argentina",
+      "Perú",
+      "Colombia"
+    ]
+  },
+  {
+    "text": "¿Cuál es el símbolo químico del hierro?",
+    "choices": [
+      "Fe",
+      "Au",
+      "Ag",
+      "Cu"
+    ]
+  },
+  {
+    "text": "¿Cuál es la moneda oficial de México?",
+    "choices": [
+      "Peso mexicano",
+      "Dólar",
+      "Euro",
+      "Quetzal"
+    ]
+  },
+  {
+    "text": "¿Cuál es el deporte más popular en España?",
+    "choices": [
+      "Fútbol",
+      "Baloncesto",
+      "Tenis",
+      "Ciclismo"
+    ]
+  },
+  {
+    "text": "¿En qué continente se encuentra Egipto?",
+    "choices": [
+      "África",
+      "Asia",
+      "Europa",
+      "Oceanía"
+    ]
+  },
+  {
+    "text": "¿Cuál es el animal nacional de Canadá?",
+    "choices": [
+      "Castor",
+      "Oso polar",
+      "Alce",
+      "Lobo"
+    ]
+  },
+  {
+    "text": "¿Cuál es la obra más famosa de Miguel de Cervantes?",
+    "choices": [
+      "El Ingenioso Hidalgo Don Quijote de la Mancha",
+      "La Celestina",
+      "La Araucana",
+      "Cien años de soledad"
+    ]
+  },
+  {
+    "text": "¿Cuál es la ciudad más poblada de América Latina?",
+    "choices": [
+      "Ciudad de México",
+      "São Paulo",
+      "Buenos Aires",
+      "Lima"
+    ]
+  },
+  {
+    "text": "¿Cuál es el idioma oficial de Brasil?",
+    "choices": [
+      "Portugués",
+      "Español",
+      "Inglés",
+      "Francés"
+    ]
+  },
+  {
+    "text": "¿Cuál es la montaña más alta de América?",
+    "choices": [
+      "Aconcagua",
+      "Pico Bolívar",
+      "Monte Everest",
+      "Monte McKinley"
+    ]
+  },
+  {
+    "text": "¿Cuál es el océano más grande del mundo?",
+    "choices": [
+      "Océano Pacífico",
+      "Océano Atlántico",
+      "Océano Índico",
+      "Océano Ártico"
+    ]
+  },
+  {
+    "text": "¿Quién escribió la obra 'Cien años de soledad'?",
+    "choices": [
+      "Gabriel García Márquez",
+      "Pablo Neruda",
+      "Octavio Paz",
+      "Jorge Luis Borges"
+    ]
+  }
+]
