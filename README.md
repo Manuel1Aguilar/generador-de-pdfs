@@ -16,5 +16,9 @@ En este repositorio hay un archivo de ejemplo de preguntas con el formato que de
 
 ![image](https://github.com/Manuel1Aguilar/generador-de-pdfs/assets/34017787/0f51f422-a07e-4ac2-a2d7-7d2c2aed941a)
 
+El archivo generado se ve asi con una pagina por examen:
+![image](https://github.com/Manuel1Aguilar/generador-de-pdfs/assets/34017787/02b29af7-f9f9-4605-8fbe-e1e6481c7e27)
+
+
 ### Consideraciones
 No funciona muy bien con preguntas o respuestas que ocupen mas de un renglon, pegarle una revisada a todos los examenes en caso de utilizarlo para asegurarse que no se sobreponen los textos.
